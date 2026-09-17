@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+frontend-next/node_modules/
+.pnp
+.pnp.js
+
+# Next.js build output
+.next/
+frontend-next/.next/
+out/
+frontend-next/out/
+build/
+frontend-next/build/
+
+# Python cache & venv
+__pycache__/
+backend/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment & local files
+.env
+.env*.local
+*.log
+
+# IDE & OS files
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
