@@ -15,6 +15,7 @@ interface Props {
   view: View;
   setView: (v: View) => void;
   open: boolean;
+  onClose?: () => void;
   gemini: boolean;
   requestCount: number;
   ticketCount: number;
@@ -22,10 +23,15 @@ interface Props {
   weekShort: string;
 }
 
-export default function Sidebar({ view, setView, open, gemini, requestCount, ticketCount, company, weekShort }: Props) {
+export default function Sidebar({ view, setView, open, onClose, gemini, requestCount, ticketCount, company, weekShort }: Props) {
   const counts: Partial<Record<View, number>> = {
     requests: requestCount,
     tickets: ticketCount,
+  };
+
+  const handleNav = (v: View) => {
+    setView(v);
+    if (onClose) onClose();
   };
 
   return (
@@ -47,7 +53,7 @@ export default function Sidebar({ view, setView, open, gemini, requestCount, tic
           <button
             key={item.id}
             className={`${styles.navItem} ${view === item.id ? styles.active : ''}`}
-            onClick={() => setView(item.id)}
+            onClick={() => handleNav(item.id)}
           >
             <item.icon />
             <span>{item.label}</span>

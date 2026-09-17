@@ -212,3 +212,20 @@
   cursor: pointer;
 }
 .rejectBtn:hover { opacity: 0.9; }
+
+@media (max-width: 640px) {
+  .overlay { padding: 12px; }
+  .modal { max-height: 92vh; width: 100%; }
+  .head { padding: 14px 16px; }
+  .body { padding: 16px; }
+  .foot {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: stretch;
+  }
+  .foot button {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}

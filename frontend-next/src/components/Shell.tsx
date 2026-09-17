@@ -32,6 +32,18 @@ export default function Shell() {
   });
   const [chatContext, setChatContext] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      setSidebarOpen(false);
+    }
+  }, []);
+
+  const handleSidebarClose = () => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      setSidebarOpen(false);
+    }
+  };
+
   const load = useCallback(async () => {
     try {
       const [requests, tickets, kb, stats, health, meta] = await Promise.all([
@@ -52,10 +64,14 @@ export default function Shell() {
 
   return (
     <div className={styles.shell}>
+      {sidebarOpen && (
+        <div className={styles.backdrop} onClick={() => setSidebarOpen(false)} />
+      )}
       <Sidebar
         view={view}
         setView={setView}
         open={sidebarOpen}
+        onClose={handleSidebarClose}
         gemini={data.health?.gemini ?? false}
         requestCount={data.requests.length}
         ticketCount={data.tickets.length}
