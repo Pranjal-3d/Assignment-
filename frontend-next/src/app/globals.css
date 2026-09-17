@@ -1,0 +1,77 @@
+/* ============================================================
+   ARIA — Veridian Corp · Black & White Design System
+   Inspired by Linear, Vercel, Raycast
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* ─ Backgrounds */
+  --bg:           #080808;
+  --surface:      #0f0f0f;
+  --card:         #141414;
+  --card-hover:   #1a1a1a;
+  --overlay:      rgba(0,0,0,0.85);
+
+  /* ─ Borders */
+  --border:       rgba(255,255,255,0.07);
+  --border-md:    rgba(255,255,255,0.12);
+  --border-hi:    rgba(255,255,255,0.2);
+  --border-focus: rgba(255,255,255,0.4);
+
+  /* ─ Text */
+  --text-1:       #ffffff;
+  --text-2:       #a1a1aa;
+  --text-3:       #52525b;
+  --text-4:       #3f3f46;
+
+  /* ─ Semantic (all grayscale) */
+  --critical:     #ffffff;
+  --high:         #d4d4d4;
+  --medium:       #8a8a8a;
+  --low:          #525252;
+
+  /* ─ Spacing & shape */
+  --sidebar-w:    240px;
+  --topbar-h:     56px;
+  --r:            8px;
+  --r-lg:         12px;
+
+  /* ─ Type */
+  --font:  'Inter', system-ui, sans-serif;
+  --mono:  'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ─ Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.6);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.8);
+}
+
+html { font-size: 14px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-1);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─ Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-hi); }
+
+/* ─ Selection */
+::selection { background: rgba(255,255,255,0.15); }
+
+/* ─ Focus */
+:focus-visible { outline: 1.5px solid var(--border-focus); outline-offset: 2px; border-radius: 4px; }
+
+/* ─ Globals */
+button { font-family: var(--font); cursor: pointer; }
+a { text-decoration: none; color: inherit; }
